@@ -1,0 +1,25 @@
+﻿<UserControl x:Class="文件同步助手.Control.DetailItem"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:文件同步助手.Control"
+             mc:Ignorable="d" Height="50" >
+    <Grid x:Name="ContentGrid" MouseEnter="ContentGrid_MouseEnter" MouseLeave="ContentGrid_MouseLeave">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="50"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="28"/>
+            <RowDefinition Height="22"/>
+        </Grid.RowDefinitions>
+        <Label x:Name="FileNameLab" Content="Label" Margin="0,0,87,0" VerticalAlignment="Top" Grid.Column="1" Height="28" FontSize="14"/>
+        <Label x:Name="label1" Content="位置" HorizontalAlignment="Left" Grid.Row="1" VerticalAlignment="Top" FontSize="10" Grid.Column="1" Width="29"/>
+        <TextBlock x:Name="PositionLab" Margin="34,5,0,0" Grid.Row="1" TextWrapping="NoWrap" Text="TextBlock" VerticalAlignment="Top" FontSize="10" Grid.Column="1" HorizontalAlignment="Left" Width="392"/>
+        <TextBlock x:Name="SizeLab" Margin="0,20,10,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" FontSize="10" Grid.RowSpan="2" HorizontalAlignment="Right" Width="72" Grid.Column="1"/>
+        <TextBlock x:Name="TimeLab" Margin="0,4,10,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" FontSize="10" HorizontalAlignment="Right" Width="146" Grid.Column="1"/>
+        <Image x:Name="ImageLab" HorizontalAlignment="Left" Height="40" Margin="5,5,0,0" Grid.RowSpan="2" VerticalAlignment="Top" Width="40"/>
+
+    </Grid>
+</UserControl>

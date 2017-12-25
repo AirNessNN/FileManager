@@ -1,0 +1,75 @@
+﻿<Window x:Class="文件同步助手.TaskCreateWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:文件同步助手"
+        mc:Ignorable="d"
+        Title="任务新建" Height="424.134" Width="517.992" ResizeMode="NoResize">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="74*"/>
+            <ColumnDefinition Width="421*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="45"/>
+            <RowDefinition Height="71*"/>
+            <RowDefinition Height="104*"/>
+            <RowDefinition Height="124*"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+        <TextBlock x:Name="TitleLab" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="NoWrap" Text="任务创建向导" VerticalAlignment="Top" Height="31" Width="288" Foreground="{DynamicResource BlueDeep}" FontSize="22" Grid.ColumnSpan="2"/>
+        <Button x:Name="BtnDone" Content="完成" HorizontalAlignment="Right" Margin="0,10,90,0" Grid.Row="4" VerticalAlignment="Top" Width="75" BorderBrush="{DynamicResource Blue}" Background="{DynamicResource Blue}" Foreground="Black" Height="19" Grid.Column="1" Click="BtnDone_Click"/>
+        <Button x:Name="BtnCancel" Content="取消" HorizontalAlignment="Right" Margin="0,10,10,0" Grid.Row="4" VerticalAlignment="Top" Width="75" Background="White" BorderBrush="{DynamicResource BlueDeep}" Height="19" Grid.Column="1" Click="BtnCancel_Click"/>
+        <GroupBox x:Name="groupBox" Header="任务类型" Height="54" Margin="10,10,10,0" Grid.Row="1" VerticalAlignment="Top" BorderBrush="{DynamicResource Blue}" Grid.ColumnSpan="2">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="54*"/>
+                    <ColumnDefinition Width="409*"/>
+                </Grid.ColumnDefinitions>
+                <RadioButton x:Name="FileRadio" Content="文件" Grid.Column="1" HorizontalAlignment="Left" Margin="271,8,0,0" VerticalAlignment="Top" Checked="FileRadio_Checked"/>
+                <RadioButton x:Name="DirectoryRadio" Content="文件夹" Grid.Column="1" HorizontalAlignment="Left" Margin="334,8,0,0" VerticalAlignment="Top" Width="66"  Checked="DirectoryRadio_Checked"/>
+                <TextBox x:Name="TaskNameBox" HorizontalAlignment="Left" Height="19" Margin="49,6,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="227" FontSize="14" Grid.ColumnSpan="2"/>
+                <TextBlock x:Name="textBlock2" HorizontalAlignment="Left" Margin="12,8,0,0" TextWrapping="Wrap" Text="标题" VerticalAlignment="Top" RenderTransformOrigin="0.167,0.656"/>
+
+            </Grid>
+        </GroupBox>
+        <GroupBox x:Name="groupBox1" Header="路径选择" Margin="10,10,11,0" Grid.Row="2" Grid.ColumnSpan="2" BorderBrush="{DynamicResource Blue}" Height="85" VerticalAlignment="Top">
+            <Grid Margin="10,0,-2,1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="32"/>
+                    <RowDefinition Height="30"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="48*"/>
+                    <ColumnDefinition Width="322*"/>
+                    <ColumnDefinition Width="85*"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="0,10,0,0" TextWrapping="Wrap" Text="主路径" VerticalAlignment="Top" Height="15" Width="36"/>
+                <TextBlock x:Name="textBlock1" HorizontalAlignment="Left" Margin="1,10,0,0" Grid.Row="1" TextWrapping="Wrap" Text="副路径" VerticalAlignment="Top"/>
+                <TextBlock x:Name="LocalPath" Grid.Column="1" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="NoWrap" Text="未选择路径" VerticalAlignment="Top" Width="312" Foreground="{DynamicResource Blue}"/>
+                <TextBlock x:Name="TargetPath" Grid.Column="1" HorizontalAlignment="Left" Margin="10,10,0,0" Grid.Row="1" TextWrapping="NoWrap" Text="未选择路径" VerticalAlignment="Top" Width="312" Foreground="{DynamicResource Blue}"/>
+                <Button x:Name="BtnLocalPath" Content="选择" Grid.Column="2" HorizontalAlignment="Left" Margin="10,8,0,0" VerticalAlignment="Top" Width="65" Click="BtnLocalPath_Click"/>
+                <Button x:Name="BtnTargetPath" Content="选择" Grid.Column="2" HorizontalAlignment="Left" Margin="10,5,0,0" Grid.Row="1" VerticalAlignment="Top" Width="65" Click="BtnTargetPath_Click"/>
+            </Grid>
+
+        </GroupBox>
+        <GroupBox x:Name="groupBox2" Header="其他选项" Margin="10,10,11,0" Grid.Row="3" Grid.ColumnSpan="2" BorderBrush="{DynamicResource Blue}" Height="93" VerticalAlignment="Top">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="28"/>
+                    <RowDefinition Height="29"/>
+                </Grid.RowDefinitions>
+                <CheckBox x:Name="AutoBackup" Content="自动备份" HorizontalAlignment="Left" Margin="103,9,0,0" VerticalAlignment="Top" Width="91"/>
+                <CheckBox x:Name="AutoSync" Content="自动同步" HorizontalAlignment="Left" Margin="10,9,0,0" VerticalAlignment="Top" IsChecked="True"/>
+                <CheckBox x:Name="BackupSkip" Content="备份筛选" HorizontalAlignment="Left" Margin="199,9,0,0" VerticalAlignment="Top" Click="BackupSkip_Click" Visibility="Visible"/>
+                <TextBox x:Name="MinBox" HorizontalAlignment="Left" Visibility="Hidden" Height="19" Margin="10,10,0,0" Grid.Row="1" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="68" HorizontalContentAlignment="Right" />
+                <TextBlock x:Name="lab1" HorizontalAlignment="Left" Margin="83,11,0,4" Grid.Row="1" TextWrapping="Wrap" Text="MB 到 " Width="38" Visibility="Hidden"/>
+                <TextBox x:Name="MaxBox" HorizontalAlignment="Left" Height="19" Margin="126,10,0,0" Grid.Row="1" Visibility="Hidden" TextWrapping="Wrap" Text="1024" VerticalAlignment="Top" Width="85" HorizontalContentAlignment="Right"/>
+                <TextBlock x:Name="lab2" HorizontalAlignment="Left" Margin="216,11,0,0" Grid.Row="1" TextWrapping="Wrap" Text="MB" VerticalAlignment="Top" Visibility="Hidden"/>
+
+            </Grid>
+        </GroupBox>
+
+    </Grid>
+</Window>

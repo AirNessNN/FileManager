@@ -1,0 +1,334 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{7B07705F-6BD8-404B-87E6-3E60ED793411}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>文件同步助手</RootNamespace>
+    <AssemblyName>文件同步助手</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>文件同步助手.App</StartupObject>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="ChildrenWindow\HelpWindow.xaml.cs">
+      <DependentUpon>HelpWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Control\BackupItem.xaml.cs">
+      <DependentUpon>BackupItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Control\DetailItem.xaml.cs">
+      <DependentUpon>DetailItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Logic\BackupItemControl.cs" />
+    <Compile Include="Logic\SyncLogic.cs" />
+    <Compile Include="Logic\TaskItem.cs" />
+    <Compile Include="ChildrenWindow\DetailWindow.xaml.cs">
+      <DependentUpon>DetailWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ChildrenWindow\TaskCreateWindow.xaml.cs">
+      <DependentUpon>TaskCreateWindow.xaml</DependentUpon>
+    </Compile>
+    <Page Include="ChildrenWindow\HelpWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Control\BackupItem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Control\ContentPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Control\DetailItem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Control\FilePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Control\ImageButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Control\SettingPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Control\StateBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Control\StatePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Control\SyncItem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Control\SyncPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Control\ContentPage.xaml.cs">
+      <DependentUpon>ContentPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Control\FilePage.xaml.cs">
+      <DependentUpon>FilePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Control\ImageButton.xaml.cs">
+      <DependentUpon>ImageButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Control\SettingPage.xaml.cs">
+      <DependentUpon>SettingPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Control\StateBox.xaml.cs">
+      <DependentUpon>StateBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Control\StatePage.xaml.cs">
+      <DependentUpon>StatePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Control\SyncItem.xaml.cs">
+      <DependentUpon>SyncItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Control\SyncPage.xaml.cs">
+      <DependentUpon>SyncPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Logic\ApplicationResoure.cs" />
+    <Compile Include="Logic\LogPacket.cs" />
+    <Compile Include="Logic\NavigationControl.cs" />
+    <Compile Include="Logic\SyncItemControl.cs" />
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="ScrollViewer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Style.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ChildrenWindow\DetailWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ChildrenWindow\TaskCreateWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\app.manifest" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Resoure\7z.png" />
+    <Resource Include="Resoure\7z_s.png" />
+    <Resource Include="Resoure\ape.png" />
+    <Resource Include="Resoure\ape_s.png" />
+    <Resource Include="Resoure\avi.png" />
+    <Resource Include="Resoure\avi_s.png" />
+    <Resource Include="Resoure\bat.png" />
+    <Resource Include="Resoure\bat_s.png" />
+    <Resource Include="Resoure\bmp.png" />
+    <Resource Include="Resoure\bmp_s.png" />
+    <Resource Include="Resoure\c.png" />
+    <Resource Include="Resoure\cpp.png" />
+    <Resource Include="Resoure\cpp_s.png" />
+    <Resource Include="Resoure\cs.png" />
+    <Resource Include="Resoure\cs_s.png" />
+    <Resource Include="Resoure\c_s.png" />
+    <Resource Include="Resoure\dll.png" />
+    <Resource Include="Resoure\dll_s.png" />
+    <Resource Include="Resoure\doc.png" />
+    <Resource Include="Resoure\docx.png" />
+    <Resource Include="Resoure\docx_s.png" />
+    <Resource Include="Resoure\doc_s.png" />
+    <Resource Include="Resoure\exe.png" />
+    <Resource Include="Resoure\exe_s.png" />
+    <Resource Include="Resoure\exitNormal.png" />
+    <Resource Include="Resoure\exitSelecting.png" />
+    <Resource Include="Resoure\fileNormal.png" />
+    <Resource Include="Resoure\fileSelected.png" />
+    <Resource Include="Resoure\fileSelecting.png" />
+    <Resource Include="Resoure\flac.png" />
+    <Resource Include="Resoure\flac_s.png" />
+    <Resource Include="Resoure\gif.png" />
+    <Resource Include="Resoure\gif_s.png" />
+    <Resource Include="Resoure\h.png" />
+    <Resource Include="Resoure\html.png" />
+    <Resource Include="Resoure\html_s.png" />
+    <Resource Include="Resoure\h_s.png" />
+    <Resource Include="Resoure\jar.png" />
+    <Resource Include="Resoure\jar_s.png" />
+    <Resource Include="Resoure\java.png" />
+    <Resource Include="Resoure\java_s.png" />
+    <Resource Include="Resoure\jpeg.png" />
+    <Resource Include="Resoure\jpeg_s.png" />
+    <Resource Include="Resoure\jpg.png" />
+    <Resource Include="Resoure\jpg_s.png" />
+    <Resource Include="Resoure\js.png" />
+    <Resource Include="Resoure\js_s.png" />
+    <Resource Include="Resoure\mid.png" />
+    <Resource Include="Resoure\mid_s.png" />
+    <Resource Include="Resoure\mkv.png" />
+    <Resource Include="Resoure\mkv_s.png" />
+    <Resource Include="Resoure\mp3.png" />
+    <Resource Include="Resoure\mp3_s.png" />
+    <Resource Include="Resoure\mp4.png" />
+    <Resource Include="Resoure\mp4_s.png" />
+    <Resource Include="Resoure\notSync.png" />
+    <Resource Include="Resoure\offLine.png" />
+    <Resource Include="Resoure\onLine.png" />
+    <Resource Include="Resoure\pdf.png" />
+    <Resource Include="Resoure\pdf_s.png" />
+    <Resource Include="Resoure\php.png" />
+    <Resource Include="Resoure\php_s.png" />
+    <Resource Include="Resoure\png.png" />
+    <Resource Include="Resoure\png_s.png" />
+    <Resource Include="Resoure\ppt.png" />
+    <Resource Include="Resoure\pptx.png" />
+    <Resource Include="Resoure\pptx_s.png" />
+    <Resource Include="Resoure\ppt_s.png" />
+    <Resource Include="Resoure\psd.png" />
+    <Resource Include="Resoure\psd_s.png" />
+    <Resource Include="Resoure\rar.png" />
+    <Resource Include="Resoure\rar_s.png" />
+    <Resource Include="Resoure\rm.png" />
+    <Resource Include="Resoure\rmvb.png" />
+    <Resource Include="Resoure\rmvb_s.png" />
+    <Resource Include="Resoure\rm_s.png" />
+    <Resource Include="Resoure\settingNormal.png" />
+    <Resource Include="Resoure\settingSelected.png" />
+    <Resource Include="Resoure\settingSelecting.png" />
+    <Resource Include="Resoure\stateNormal.png" />
+    <Resource Include="Resoure\stateSelected.png" />
+    <Resource Include="Resoure\stateSelecting.png" />
+    <Resource Include="Resoure\syncing.png" />
+    <Resource Include="Resoure\syncNormal.png" />
+    <Resource Include="Resoure\syncSelected.png" />
+    <Resource Include="Resoure\syncSelecting.png" />
+    <Resource Include="Resoure\timg.png" />
+    <Resource Include="Resoure\txt.png" />
+    <Resource Include="Resoure\txt_s.png" />
+    <Resource Include="Resoure\unknow.png" />
+    <Resource Include="Resoure\unknow_s.png" />
+    <Resource Include="Resoure\usbIn.png" />
+    <Resource Include="Resoure\usbOut.png" />
+    <Resource Include="Resoure\wav.png" />
+    <Resource Include="Resoure\wav_s.png" />
+    <Resource Include="Resoure\wma.png" />
+    <Resource Include="Resoure\wma_s.png" />
+    <Resource Include="Resoure\xls.png" />
+    <Resource Include="Resoure\xlsx.png" />
+    <Resource Include="Resoure\xlsx_s.png" />
+    <Resource Include="Resoure\xls_s.png" />
+    <Resource Include="Resoure\xml.png" />
+    <Resource Include="Resoure\xml_s.png" />
+    <Resource Include="Resoure\zip.png" />
+    <Resource Include="Resoure\zip_s.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

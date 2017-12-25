@@ -1,0 +1,58 @@
+﻿<Window x:Class="文件同步助手.ChildrenWindow.DetailWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:文件同步助手.ChildrenWindow"
+        mc:Ignorable="d"
+        Title="详情" Height="465.782" Width="686.364" Closing="Window_Closing">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="185"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="53"/>
+            <RowDefinition Height="166"/>
+            <RowDefinition/>
+            <RowDefinition Height="57"/>
+            <RowDefinition Height="39"/>
+        </Grid.RowDefinitions>
+        <Label x:Name="TaskNameLab" Content="标题" Margin="10,10,64,10" FontSize="18" Foreground="{DynamicResource BlueDeep}" MouseLeftButtonUp="TaskNameLab_MouseLeftButtonUp" ToolTip="单击标题可以修改"/>
+        <Label x:Name="label" Content="类型：" Grid.Column="1" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="46" Height="25"/>
+        <Label x:Name="TypeLab" Content="类型" Grid.Column="1" HorizontalAlignment="Left" Margin="61,10,0,0" VerticalAlignment="Top" Width="54" Height="25"/>
+        <ScrollViewer Margin="10" Grid.Row="1" Style="{StaticResource for_scrollviewer}" Grid.RowSpan="2" x:Name="Viewer">
+            <StackPanel Grid.Row="1" Grid.RowSpan="2" x:Name="FileViewer"  />
+        </ScrollViewer>
+        <Rectangle Margin="10" Grid.Row="1" Stroke="{DynamicResource Blue}" Grid.RowSpan="2" x:Name="Box"/>
+        <TextBox x:Name="TitleBox" Margin="12,10,64,0" TextWrapping="NoWrap" Text="标题" Background="{x:Null}" VerticalContentAlignment="Center" FontSize="18" Foreground="{DynamicResource BlueDeep}" BorderBrush="{x:Null}" Height="33" VerticalAlignment="Top" Visibility="Hidden" KeyDown="TitleBox_KeyDown" LostFocus="TitleBox_LostFocus"/>
+
+        <Label x:Name="label1" Content="修改时间" Grid.Column="1" Margin="10,10,10,0" Grid.Row="1" VerticalAlignment="Top" Height="25"/>
+        <TextBlock x:Name="TimeBlock" Grid.Column="1" Margin="34,40,10,0" Grid.Row="1" TextWrapping="Wrap" Text="time" VerticalAlignment="Top" Height="15"/>
+        <Label x:Name="label2" Content="任务总大小" Grid.Column="1" Margin="10,60,10,0" Grid.Row="1" VerticalAlignment="Top" Height="25"/>
+        <TextBlock x:Name="SizeBlock" Grid.Column="1" Margin="34,90,10,0" Grid.Row="1" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="15"/>
+        <Label x:Name="label3" Content="文件总数量" Grid.Column="1" Margin="10,110,10,0" Grid.Row="1" VerticalAlignment="Top" Height="25"/>
+        <TextBlock x:Name="NumBlock" Grid.Column="1" Margin="34,140,10,0" Grid.Row="1" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="15"/>
+        <Button x:Name="BtnCancel" Content="取消" Grid.Column="1" HorizontalAlignment="Right" Margin="0,9,10,0" Grid.Row="4" VerticalAlignment="Top" Width="75" Height="19" Click="BtnCancel_Click"/>
+        <Button x:Name="BtnDone" Content="确认" HorizontalAlignment="Right" Margin="0,9,100,0" Grid.Row="4" VerticalAlignment="Top" Width="75" Grid.Column="1" Height="19" Click="BtnDone_Click"/>
+        <CheckBox x:Name="AutoSync" Content="自动同步" Grid.Column="1" HorizontalAlignment="Left" Margin="10,10,0,0" Grid.Row="2" VerticalAlignment="Top" Height="15" Width="68" Click="AutoSync_Checked"/>
+        <CheckBox x:Name="AutoBackup" Content="自动备份" Grid.Column="1" HorizontalAlignment="Left" Margin="10,30,0,0" Grid.Row="2" VerticalAlignment="Top" Height="15" Width="68" Click="AutoBackup_Click"/>
+        <CheckBox x:Name="BackupFiltrate" Content="备份筛选" Grid.Column="1" HorizontalAlignment="Left" Margin="100,30,0,0" Grid.Row="2" VerticalAlignment="Top" Height="15" Width="68" Click="BackupFiltrate_Click"/>
+        <CheckBox x:Name="SkipItem" Content="跳过该项" Grid.Column="1" HorizontalAlignment="Left" Margin="100,10,0,0" Grid.Row="2" VerticalAlignment="Top" Height="15" Width="68" Click="SkipItem_Click"/>
+        <Label x:Name="label4" Content="主路径：" HorizontalAlignment="Left" Margin="12,0,0,0" Grid.Row="3" VerticalAlignment="Top" Height="27" Width="63"/>
+        <TextBlock x:Name="LocalPathBlock" Margin="80,5,103,0" Grid.Row="3" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="15"/>
+        <Label x:Name="label5" Content="目标：" HorizontalAlignment="Left" Margin="12,27,0,0" Grid.Row="3" VerticalAlignment="Top" Width="63" Height="25"/>
+        <TextBlock x:Name="TargetPathBlock" Margin="80,32,103,0" Grid.Row="3" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="15"/>
+        <Button x:Name="BtnEditLocalPath" Content="修改" HorizontalAlignment="Left" Margin="407,6,0,0" Grid.Row="3" VerticalAlignment="Top" Width="75" Height="19" Click="BtnEditLocalPath_Click"/>
+        <Button x:Name="BtnEditTargetPath" Content="修改" HorizontalAlignment="Left" Margin="407,32,0,0" Grid.Row="3" VerticalAlignment="Top" Width="75" Height="19" Click="BtnEditTargetPath_Click"/>
+        <Button x:Name="BtnSyncNow" Content="同步" Grid.Column="1" HorizontalAlignment="Left" Margin="10,6,0,0" Grid.Row="3" VerticalAlignment="Top" Width="165" Height="19" Click="BtnSyncNow_Click"/>
+        <Button x:Name="BtnDelete" Content="删除" Grid.Column="1" HorizontalAlignment="Left" Margin="10,30,0,0" Grid.Row="3" VerticalAlignment="Top" Width="165" Click="BtnDelete_Click"/>
+        <TextBlock x:Name="textBlock" Grid.Column="1" HorizontalAlignment="Left" Margin="10,58,0,0" Grid.Row="2" TextWrapping="Wrap" Text="最小区间：" VerticalAlignment="Top"/>
+        <TextBlock x:Name="textBlock1" Grid.Column="1" HorizontalAlignment="Left" Margin="10,86,0,0" Grid.Row="2" TextWrapping="Wrap" Text="最大区间：" VerticalAlignment="Top"/>
+        <TextBox x:Name="MinSizeBox" Grid.Column="1" HorizontalAlignment="Left" Height="20" Margin="75,57,0,0" Grid.Row="2" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="68" HorizontalContentAlignment="Right" GotFocus="MinSizeBox_GotFocus" TextChanged="MinSizeBox_TextChanged" />
+        <TextBlock x:Name="textBlock2" Grid.Column="1" HorizontalAlignment="Left" Margin="148,58,0,0" Grid.Row="2" TextWrapping="Wrap" Text="MB" VerticalAlignment="Top"/>
+        <TextBlock x:Name="textBlock3" Grid.Column="1" HorizontalAlignment="Left" Margin="148,86,0,0" Grid.Row="2" TextWrapping="Wrap" Text="MB" VerticalAlignment="Top"/>
+        <TextBox x:Name="MaxSizeBox" Grid.Column="1" HorizontalAlignment="Left" Height="20" Margin="75,85,0,0" Grid.Row="2" TextWrapping="Wrap" Text="1024" VerticalAlignment="Top" Width="68" HorizontalContentAlignment="Right" GotFocus="MaxSizeBox_GotFocus" TextChanged="MaxSizeBox_TextChanged" />
+
+    </Grid>
+</Window>

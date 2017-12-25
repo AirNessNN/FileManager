@@ -1,0 +1,23 @@
+﻿<Window x:Class="文件同步助手.ChildrenWindow.HelpWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:文件同步助手.ChildrenWindow"
+        mc:Ignorable="d"
+        Title="帮助" Height="238.081" Width="482.267" ResizeMode="NoResize">
+    <Grid>
+        <Grid x:Name="Help" Visibility="Hidden">
+            <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="30" Width="456" Text="本软件是一款数据同步软件。本帮助将展示如何创建任务并设置同步。" FontSize="14" Foreground="{DynamicResource BlueDeep}"/>
+            <TextBlock x:Name="textBlock1" HorizontalAlignment="Left" Margin="30,40,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="436" Text="打开同步中心，点击新增任务，完成任务创建向导，即可对创建的任务进行手动同步或自动同步。"/>
+            <TextBlock x:Name="textBlock2" HorizontalAlignment="Left" Margin="30,93,0,0" TextWrapping="Wrap" Text="任务创建完成之后可以双击列表，修改任务相关信息。" VerticalAlignment="Top" Width="436"/>
+            <TextBlock x:Name="textBlock3" HorizontalAlignment="Left" Margin="30,129,0,0" TextWrapping="Wrap" Text="在设置中心中可以设置所有任务的全局开关和软件的高级属性" VerticalAlignment="Top" Width="436"/>
+            <TextBlock x:Name="textBlock4" HorizontalAlignment="Left" Margin="30,171,0,0" TextWrapping="Wrap" Text="程序写的来，帮助写不来，好尴尬。" VerticalAlignment="Top" Height="19" Width="436"/>
+
+        </Grid>
+        <Grid x:Name="About">
+            <TextBlock x:Name="textBlock5" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="189" Width="456"><Run Text="开发版本：.Net Framework 4.5。"/><LineBreak/><Run/><LineBreak/><Run Text="开发者：AirNess。"/><LineBreak/><Run/><LineBreak/><Run Text="版本：1.0测试版。"/><LineBreak/><Run/><LineBreak/><Run Text="不知道再写啥了。真尼玛尴尬。"/><LineBreak/><Run/><LineBreak/></TextBlock>
+
+        </Grid>
+    </Grid>
+</Window>
